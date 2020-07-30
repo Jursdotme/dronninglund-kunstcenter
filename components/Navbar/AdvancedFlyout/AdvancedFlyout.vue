@@ -40,7 +40,7 @@
               >
                 <div
                   v-if="subItem.icon"
-                  class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12"
+                  class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12"
                   v-html="subItem.icon"
                 ></div>
                 <div class="space-y-1">
@@ -69,13 +69,16 @@
                   </div>
                   <span
                     v-if="subItem.pill"
-                    class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-indigo-100 text-indigo-800"
+                    class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-teal-100 text-teal-800"
                   >
                     {{ subItem.pill }}
                   </span>
                 </div>
-                <p class="text-sm leading-5 text-gray-500">
-                  Empower your entire team with even more advanced tools.
+                <p
+                  v-if="subItem.description"
+                  class="text-sm leading-5 text-gray-500"
+                >
+                  {{ subItem.description }}
                 </p>
               </nuxt-link>
             </div>

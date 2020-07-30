@@ -1,15 +1,50 @@
 <template>
-  <div class="relative bg-white shadow z-10">
+  <div class="relative bg-white shadow z-20">
     <div
       class="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10"
     >
-      <div>
+      <div class="flex-1">
         <a href="/" class="flex">
-          <img
-            class="h-8 w-auto sm:h-10"
-            src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-            alt="Workflow"
-          />
+          <svg
+            class="w-32"
+            viewBox="0 0 95.112 23.697"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <filter
+                id="a"
+                x="0"
+                y="0"
+                width="1"
+                height="1.001"
+                color-interpolation-filters="sRGB"
+              >
+                <feGaussianBlur stdDeviation=".004" />
+              </filter>
+            </defs>
+            <g transform="translate(-49.588 -40.015)" filter="url(#a)">
+              <path
+                d="M63.735 55.333l-14.146 3.063 1.134 5.218 16.616.07-.855-5.817-2.203-.014z"
+                fill="gray"
+              />
+              <path
+                d="M61.778 43.771l2.929 13.555 1.698.01-.206-1.398-.067-.447 2.163-.682-2.247-10.268z"
+                fill="#333"
+              />
+              <path
+                d="M68.409 55.329l-1.687.532 1.134 7.708 18.042.111-.845-5.736-16.1-.128zM86.922 55.344l-1.64.517 1.134 7.708 22.006.092v-5.734l-20.959-.11zm55.748.332l-.47 2.177-6.844.044v5.725l7.91-.047 1.134-7.377zm-7.843 2.224l-14.132.091-11.742-.062v5.734l11.998.05v-.006l13.877-.082z"
+                fill="gray"
+              />
+              <g fill="#333">
+                <g stroke-width="5.292">
+                  <path
+                    d="M65.599 40.015l3.78 17.274 15.596.126-.218-1.477-.065-.447 2.115-.666-2.295-10.486zM84.109 40.015l3.78 17.274 17.507.141-2.892-13.21zM102.13 40.015l3.588 16.401 12.38-12.751zm39.103 0l-15.451 3.643L137.65 56.39zM144.7 43.771l-3.847.695-2.82 12.884 3.737-.024z"
+                  />
+                </g>
+                <path d="M137.45 57.289h-31.543L122 40.714z" />
+              </g>
+            </g>
+          </svg>
         </a>
       </div>
       <div class="-mr-2 -my-2 md:hidden">
@@ -35,7 +70,7 @@
         </button>
       </div>
       <div
-        class="hidden md:flex-1 md:flex md:items-center md:justify-between md:space-x-12"
+        class="hidden md:flex-1 md:flex md:items-center md:justify-center md:space-x-12"
       >
         <nav class="flex space-x-10">
           <MenuItem
@@ -44,23 +79,22 @@
             v-bind="menuItem"
           />
         </nav>
-
-        <div class="flex items-center space-x-8">
+      </div>
+      <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
+        <a
+          href="#"
+          class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+        >
+          Sign in
+        </a>
+        <span class="inline-flex rounded-md shadow-sm">
           <a
             href="#"
-            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+            class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal active:bg-teal-700 transition ease-in-out duration-150"
           >
-            Sign in
+            Sign up
           </a>
-          <span class="inline-flex rounded-md shadow-sm">
-            <a
-              href="#"
-              class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
-            >
-              Sign up
-            </a>
-          </span>
-        </div>
+        </span>
       </div>
     </div>
 
@@ -90,117 +124,105 @@ export default {
     return {
       mobileNavIsOpen: false,
       menuItems: [
+        { label: 'Udstillinger', target: 'udstillinger', type: 'normal' },
         {
-          label: 'Solutions',
+          label: 'Events',
           type: 'AdvancedFlyout',
           subItems: [
             {
-              label: 'Analytics',
+              label: 'Koncerter',
               target: '/',
               type: 'regular',
               description:
-                'Get a better understanding of where your traffic is coming from.',
+                'Hyggelige koncertaftener i spændende omgivelser, oplev live musik for enhver smag.',
               icon:
                 '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>',
             },
             {
-              label: 'Engagement',
+              label: 'Foredrag',
               target: '/',
               type: 'regular',
               description:
-                'Speak directly to your customers in a more meaningful way.',
+                'Oplev spændende foredrag fra interessante foredragsholdere og kunstnere.',
               icon:
                 '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>',
             },
             {
-              label: 'Security',
+              label: 'Fernisering',
               target: '/',
               type: 'regular',
-              description: 'Your customers data will be safe and secure.',
+              description:
+                'Åbningshøjtideligheder i forbindelse med nye udstillinger.',
               icon:
                 '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
             },
             {
-              label: 'Integrations',
+              label: 'Kurser',
               target: '/',
               type: 'regular',
               description:
-                'Connect with third-party tools that you’re already using.',
+                'Udforsk dine egne kunstneriske evner inden for mange forskellige medier.',
               icon:
                 '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>',
             },
             {
-              label: 'Automations',
-              target: '/',
-              type: 'regular',
-              description:
-                'Build strategic funnels that will drive your customers to convert.',
-              icon:
-                '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>',
-            },
-            {
-              label: 'Reports',
-              target: '/',
-              type: 'regular',
-              description:
-                'Get detailed reports that will help you make more informed decisions.',
-              icon:
-                '<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-            },
-            {
-              label: 'Enterprise',
+              label: 'Kalender',
               type: 'wide',
               target: '/',
-              description:
-                'Empower your entire team with even more advanced tools.',
-              pill: 'New',
+              description: 'Se alle de kommende begivenheder og events.',
+              pill: 'Nyt',
             },
           ],
         },
-        { label: 'Pricing', target: '/', type: 'normal' },
-        { label: 'Docs', target: '/', type: 'normal' },
+        { label: 'Blog', target: '/blog', type: 'normal' },
 
         {
-          label: 'Solutions',
+          label: 'Om os',
           type: 'SimpleFlyout',
           subItems: [
             {
-              label: 'Blog',
+              label: 'Ledelse',
               description:
                 'Learn about tips, product updates and company culture.',
               target: '/blog',
               type: 'secondary',
             },
             {
-              label: 'Help Center',
+              label: 'Historie',
               description:
                 'Get all of your questions answered in our forums of contact support.',
               target: '/',
               type: 'secondary',
             },
             {
-              label: 'Guides',
+              label: 'Fondats',
               description:
                 'Learn how to maximize our platform to get the most out of it.',
               target: '/',
               type: 'secondary',
             },
             {
-              label: 'Security',
+              label: 'Sponsorer',
               description:
                 'Check out webinars with experts and learn about our annual conference.',
               target: '/',
               type: 'secondary',
             },
             {
-              label: 'Events',
+              label: 'Job',
+              description: 'Understand how we take your privacy seriously.',
+              target: '/',
+              type: 'secondary',
+            },
+            {
+              label: 'Venneforening',
               description: 'Understand how we take your privacy seriously.',
               target: '/',
               type: 'secondary',
             },
           ],
         },
-        { label: 'Contact', target: '/contact', type: 'normal' },
+        { label: 'Kontakt', target: '/kontakt', type: 'normal' },
       ],
     }
   },
